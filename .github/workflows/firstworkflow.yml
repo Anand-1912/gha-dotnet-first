@@ -15,4 +15,4 @@ jobs:
       - name: run_tests
         run: dotnet test
       - name: run_console
-        run: dotnet run --project ".\CalculatorConsole"
+        run: dotnet run --project ".\CalculatorConsole\CalculatorConsole.csproj"
