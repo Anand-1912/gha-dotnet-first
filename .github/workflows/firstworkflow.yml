@@ -1,0 +1,18 @@
+name: first-dotnet-workflow
+on: workflow_dispatch
+jobs:
+  runconsole:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download_src
+        uses: actions/checkout@v3
+      - name: setup_dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "6.0.x"
+      - name: build_solution
+        run: dotnet build
+      - name: run_tests
+        run: dotnet test
+      - name: run_console
+        run: dotnet run --project ".\CalculatorConsole"
